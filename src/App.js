@@ -14,7 +14,7 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >changed on feature change</a>
+        >learn react</a>
       </header>
     </div>
   );
