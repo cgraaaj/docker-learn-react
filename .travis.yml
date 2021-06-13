@@ -6,4 +6,16 @@ before_install:
   - docker build -t raju6713/docker-learn-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true raju6713/docker-learn-react npm run test 
+  - docker run -e CI=true raju6713/docker-learn-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-learn-react"
+  env: "Dockerlearnreact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-973522224138"
+  bucket_path: "docker-learn-react"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  on:
+    branch: master
