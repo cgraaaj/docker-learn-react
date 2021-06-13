@@ -1,0 +1,6 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+   - docker build -t raju6713/docker-learn-react -f Dockerfile.dev .
